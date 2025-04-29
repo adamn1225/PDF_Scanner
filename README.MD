@@ -1,4 +1,3 @@
----
 PDF Forensic Scanner (Zero Dependency Edition)
 
 Usage:
@@ -19,5 +18,3 @@ Tips:
 - Run on copies of files, not originals.
 - Review quarantine/ folder manually for anomalies.
 - This scanner won't catch *everything* — it's a first pass.
----
-
