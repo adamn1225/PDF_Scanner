@@ -3,10 +3,10 @@
 ## Usage:
 
 ### What It Does:
-✔ Scans each PDF for suspicious content (hex blocks, custom fonts, stream tampering)
-✔ Flags suspicious PDFs and moves them into /quarantine
-✔ Saves a report JSON file into /reports
-✔ Does not require pandas, numpy, or any big libraries. 100% lightweight.
+- Scans each PDF for suspicious content (hex blocks, custom fonts, stream tampering)
+- Flags suspicious PDFs and moves them into /quarantine
+- Saves a report JSON file into /reports
+- Does not require pandas, numpy, or any big libraries. 100% lightweight.
 
 ### Requirements:
 - Python 3.8+
