@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Forensics Scanner</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropzone {
+        width: 85%;
+        padding: 50px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        font-size: 18px;
+        color: #aaa;
+        border-radius: 8px;
+        transition: border-color 0.3s ease;
+    }
+
+    .dropzone:hover {
+        border-color: #4CAF50;
+        color: #4CAF50;
+    }
+
+    .results {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    .results h3 {
+        margin-top: 0;
+    }
+
+    .results ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .results li {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .results li:last-child {
+        border-bottom: none;
+    }
+
+.status-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status-encrypted {
+    background-color: #FFCC00; /* Yellow */
+}
+
+.status-suspicious {
+    background-color: #FF0000; /* Red */
+}
+
+.status-safe {
+    background-color: #4CAF50; /* Green */
+}
+
+    @media (max-width: 600px) {
+        .dropzone {
+            font-size: 16px;
+            padding: 30px;
+        }
+
+        .container {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>PDF Forensics Scanner</h1>
+</header>
+
+
+<div class="container">
+    <div class="dropzone" id="dropzone">Drag & Drop PDFs Here or Click to Upload</div>
+    <div class="results" id="results">
+        <h3>Results:</h3>
+    <div id="summary" style="margin-top: 20px; font-weight: bold;"></div>
+
+        <ul id="results-list"></ul>
+        
+    </div>
+<button id="download-btn" hidden style="margin-top: 20px; padding: 10px 20px; background-color: #2a9ef7; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Download Results
+</button>
+<button id="export-analysis-btn" hidden style="margin-top: 20px; padding: 10px 20px; background-color: #2a9ef7; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Export Structure Analysis
+</button>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/loading.js"></script>
+
+</body>
+</html>

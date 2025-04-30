@@ -1,8 +1,4 @@
-# This script scans a PDF file for signs of obfuscation or tampering.
-# It looks for long hexadecimal strings and suspicious font references.
-# If it finds more than a certain threshold, it flags the PDF as potentially tampered.
 import re
-import sys
 from PyPDF2 import PdfReader
 
 def scan_pdf_for_obfuscation(file_path):
@@ -25,22 +21,12 @@ def scan_pdf_for_obfuscation(file_path):
                 suspicious_font_count += 1
 
     except Exception as e:
-        print(f"Error reading PDF: {e}")
-        return
+        return {"error": f"Error reading PDF: {e}"}
 
-    print(f"Scan results for {file_path}:")
-    print(f"  - Total pages scanned: {total_objects_scanned}")
-    print(f"  - Hex blocks found: {suspicious_hex_count}")
-    print(f"  - Suspicious font encoding references: {suspicious_font_count}")
-
-    # Heuristic: If >5 hex blocks or fonts, HIGHLY suspicious
-    if suspicious_hex_count > 5 or suspicious_font_count > 2:
-        print("\n  This PDF is LIKELY TAMPERED or OBFUSCATED.\n")
-    else:
-        print("\n  This PDF appears clean.\n")
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python pdf_obfuscation_scanner.py <path_to_pdf>")
-    else:
-        scan_pdf_for_obfuscation(sys.argv[1])
+    # Return the results as a dictionary
+    return {
+        "total_objects_scanned": total_objects_scanned,
+        "suspicious_hex_count": suspicious_hex_count,
+        "suspicious_font_count": suspicious_font_count,
+        "is_obfuscated": suspicious_hex_count > 5 or suspicious_font_count > 2
+    }

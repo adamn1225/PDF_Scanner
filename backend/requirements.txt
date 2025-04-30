@@ -1,0 +1,6 @@
+Flask
+gunicorn
+flask_cors
+pandas
+PyPDF2
+pymupdf
