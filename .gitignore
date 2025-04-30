@@ -1,3 +1,44 @@
-backend/venv/
-backend/__pycache__/
-backend/*.pyc
+# Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+*.venv
+venv/
+env/
+ENV/
+
+# Elastic Beanstalk-related files
+.elasticbeanstalk/
+*.log
+*.config
+
+# Docker-related files
+*.dockerignore
+Dockerfile~
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# S3 deployment artifacts (if any)
+*.zip
+*.tar.gz
+
+# Node.js (if frontend uses Node.js)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Frontend build files (if applicable)
+frontend/build/
+frontend/dist/
+frontend/node_modules/
